@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A qma00000
+#SBATCH -A qitianma_19541
 #SBATCH -p m100_usr_prod
 #SBATCH --time 01:00:00     # format: HH:MM:SS
 #SBATCH -N 1                # 1 node

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -p m100_usr_prod
-#SBATCH --time 01:00:00     # format: HH:MM:SS
+#SBATCH --time 00:10:00     # format: HH:MM:SS
 #SBATCH -N 1                # 1 node
 #SBATCH --ntasks-per-node=8 # 8 tasks out of 128
 #SBATCH --gres=gpu:1        # 1 gpus per node out of 4
@@ -8,13 +8,5 @@
 #SBATCH --job-name=test
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=qitianma@outlook.com
-
-module load python/3.8.2
-module load anaconda/2020.11
-conda create --name openmmlab python=3.10
-conda activate openmmlab
-
-conda install -c "nvidia/label/cuda-11.6.2" cuda-nvcc
-conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
 
 python test.py
